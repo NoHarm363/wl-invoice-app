@@ -179,7 +179,7 @@ with st.form("invoice_form"):
     with col5:
         amount = st.text_input("Amount (RM). Example: 1000.00", value="")
     with col6:
-        cts = st.text_input("CTS", value="")
+        cts = st.text_input("CTS", value="1")
         
     remark_1 = st.text_input("Remark 1", value="", max_chars=73)
     remark_2 = st.text_input("Remark 2", value="", max_chars=73)
@@ -219,7 +219,7 @@ if submitted:
         'Remark_1': remark_1,
         'Remark_2': remark_2,
         'Remark_3': remark_3,
-        'Grand_Total': str(grand_total),
+        'Grand_Total': str(f"{grand_total:.2f}"),
         'Driver_No': driver_no,
         'Driver_Name': driver_name
     }
